@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.AdotantesPage"
+    Title="Adotantes">
+
+    <VerticalStackLayout Padding="25" Spacing="15">
+
+        <Label
+            Text="Cadastro de Adotantes"
+            FontSize="24"
+            FontAttributes="Bold" />
+
+        <Entry Placeholder="Nome completo" />
+        <Entry Placeholder="Telefone" />
+        <Entry Placeholder="Endereço" />
+
+        <Button Text="Salvar Adotante" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

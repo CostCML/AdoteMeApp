@@ -2,5 +2,5 @@
 
 public class Voluntario : Pessoa
 {
-    public string Funcao { get; set; }
+    public string Funcao { get; set; } = string.Empty;
 }

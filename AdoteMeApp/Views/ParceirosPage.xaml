@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.ParceirosPage"
+    Title="Parceiros">
+
+    <VerticalStackLayout Padding="25" Spacing="15">
+
+        <Label
+            Text="Empresas Parceiras"
+            FontSize="24"
+            FontAttributes="Bold" />
+
+        <Entry Placeholder="Nome da empresa" />
+        <Entry Placeholder="Tipo de parceria" />
+
+        <Button Text="Cadastrar Parceiro" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

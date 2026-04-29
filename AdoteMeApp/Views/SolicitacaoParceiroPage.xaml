@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.SolicitacaoParceiroPage"
+    Title="Solicitação de Parceria">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+
+            <Label
+                Text="Solicitação de Parceria Empresarial"
+                FontSize="24"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+            <Entry Placeholder="Nome da empresa" />
+
+            <Entry Placeholder="Responsável pela empresa" />
+
+            <Entry Placeholder="CNPJ" />
+
+            <Entry Placeholder="Telefone" />
+
+            <Entry Placeholder="E-mail empresarial" />
+
+            <Entry Placeholder="Tipo de parceria desejada" />
+
+            <Editor
+                Placeholder="Mensagem / observações"
+                HeightRequest="120" />
+
+            <Button
+                Text="Enviar Solicitação"
+                HeightRequest="50" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

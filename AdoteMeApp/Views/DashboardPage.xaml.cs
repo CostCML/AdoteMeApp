@@ -2,8 +2,8 @@ namespace AdoteMeApp.Views;
 
 public partial class DashboardPage : ContentPage
 {
-	public DashboardPage()
-	{
-		InitializeComponent();
-	}
+    public DashboardPage()
+    {
+        InitializeComponent();
+    }
 }

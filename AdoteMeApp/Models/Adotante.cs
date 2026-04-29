@@ -2,5 +2,5 @@
 
 public class Adotante : Pessoa
 {
-    public string Endereco { get; set; }
+    public string Endereco { get; set; } = string.Empty;
 }

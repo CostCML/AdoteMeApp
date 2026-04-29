@@ -3,6 +3,8 @@
 public class Parceiro
 {
     public int Id { get; set; }
-    public string NomeEmpresa { get; set; }
-    public string TipoParceria { get; set; }
+
+    public string NomeEmpresa { get; set; } = string.Empty;
+
+    public string TipoParceria { get; set; } = string.Empty;
 }

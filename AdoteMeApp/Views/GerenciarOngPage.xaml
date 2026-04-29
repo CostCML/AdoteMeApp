@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.GerenciarOngPage"
+    Title="Gerenciar ONG">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="15">
+
+            <Label
+                Text="Painel Administrativo da ONG"
+                FontSize="24" />
+
+            <Button Text="Gerenciar Animais" />
+            <Button Text="Gerenciar Voluntários" />
+            <Button Text="Gerenciar Adotantes" />
+            <Button Text="Gerenciar Parceiros" />
+            <Button Text="Relatórios" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
