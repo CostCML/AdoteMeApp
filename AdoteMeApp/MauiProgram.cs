@@ -1,25 +1,31 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AdoteMeApp.Controllers;
+using AdoteMeApp.Data;
+using AdoteMeApp.Infrastructure;
 
-namespace AdoteMeApp
+namespace AdoteMeApp;
+
+public static class MauiProgram
 {
-    public static class MauiProgram
+    public static MauiApp CreateMauiApp()
     {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
-            builder
-                .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
+        var builder = MauiApp.CreateBuilder();
 
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
+        builder
+            .UseMauiApp<App>()
+            .ConfigureFonts(fonts =>
+            {
+                fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+            });
 
-            return builder.Build();
-        }
+        string dbPath = Path.Combine(FileSystem.AppDataDirectory, "adoteme.db3");
+
+        builder.Services.AddSingleton<AppDatabase>(s => new AppDatabase(dbPath));
+        builder.Services.AddSingleton<OngController>();
+
+        var app = builder.Build();
+
+        ServiceHelper.Services = app.Services;
+
+        return app;
     }
 }
