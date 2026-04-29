@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36518.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoteMeApp", "AdoteMeApp\AdoteMeApp.csproj", "{C642A12B-5346-4B39-A1E1-F49078BE3291}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C642A12B-5346-4B39-A1E1-F49078BE3291}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAA9BF46-F5A7-4A88-9CF3-FEA2680BF7DF}
+	EndGlobalSection
+EndGlobal
