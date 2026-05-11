@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,44 +7,55 @@
     Title="Login">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="20">
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20"
+            VerticalOptions="Center">
 
             <Label
                 Text="Adote-Me App"
-                FontSize="32"
-                HorizontalOptions="Center"
-                FontAttributes="Bold" />
-
-            <Label
-                Text="Login do Sistema"
-                FontSize="20"
+                FontSize="34"
+                FontAttributes="Bold"
                 HorizontalOptions="Center" />
 
-            <Entry Placeholder="E-mail" />
+            <Label
+                Text="Faça login para continuar"
+                HorizontalOptions="Center"
+                TextColor="Gray" />
 
-            <Entry Placeholder="Senha" IsPassword="True" />
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Digite seu e-mail"
+                Keyboard="Email" />
+
+            <Entry
+                x:Name="SenhaEntry"
+                Placeholder="Digite sua senha"
+                IsPassword="True" />
 
             <Button
                 Text="Entrar"
-                HeightRequest="50" />
+                Clicked="OnEntrarClicked" />
 
             <Button
-                Text="Cadastrar como Adotante"
-                Clicked="OnCadastroAdotanteClicked" />
+                Text="Cadastrar Adotante"
+                Clicked="OnCadastroClicked" />
 
             <Button
-                Text="Solicitar Parceria Empresarial"
-                Clicked="OnSolicitarParceriaClicked" />
+                Text="Cadastrar ONG"
+                Clicked="OnCadastroONGClicked" />
 
             <Button
                 Text="Login Empresa Parceira"
                 Clicked="OnLoginParceiroClicked" />
 
             <Button
-                Text="Login Administrativo ONG"
-                Clicked="OnLoginAdminClicked" />
+                Text="Recuperar Senha"
+                Clicked="OnRecuperarSenhaClicked" />
 
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

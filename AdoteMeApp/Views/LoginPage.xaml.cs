@@ -7,23 +7,43 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnCadastroAdotanteClicked(object sender, EventArgs e)
+    private async void OnEntrarClicked(
+        object sender,
+        EventArgs e)
     {
-        await Navigation.PushAsync(new CadastroAdotantePage());
+        await Navigation.PushAsync(
+            new DashboardPage());
     }
 
-    private async void OnSolicitarParceriaClicked(object sender, EventArgs e)
+    private async void OnCadastroClicked(
+        object sender,
+        EventArgs e)
     {
-        await Navigation.PushAsync(new SolicitacaoParceiroPage());
+        await Navigation.PushAsync(
+            new CadastroAdotantePage());
     }
 
-    private async void OnLoginParceiroClicked(object sender, EventArgs e)
+    private async void OnCadastroONGClicked(
+        object sender,
+        EventArgs e)
     {
-        await Navigation.PushAsync(new LoginParceiroPage());
+        await Navigation.PushAsync(
+            new CadastroONGPage());
     }
 
-    private async void OnLoginAdminClicked(object sender, EventArgs e)
+    private async void OnLoginParceiroClicked(
+        object sender,
+        EventArgs e)
     {
-        await Navigation.PushAsync(new LoginAdminPage());
+        await Navigation.PushAsync(
+            new LoginParceiroPage());
+    }
+
+    private async void OnRecuperarSenhaClicked(
+        object sender,
+        EventArgs e)
+    {
+        await Navigation.PushAsync(
+            new RecuperarSenhaPage());
     }
 }

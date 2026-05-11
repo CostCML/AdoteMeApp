@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.RecuperarSenhaPage"
+    Title="Recuperar Senha">
+
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="20">
+
+        <Label
+            Text="Recuperar Senha"
+            FontSize="28"
+            FontAttributes="Bold" />
+
+        <Entry
+            x:Name="EmailEntry"
+            Placeholder="Digite seu e-mail" />
+
+        <Button
+            Text="Enviar recuperação"
+            Clicked="OnEnviarClicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

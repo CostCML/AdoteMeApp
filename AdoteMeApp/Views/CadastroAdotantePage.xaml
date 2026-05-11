@@ -8,17 +8,17 @@
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="15">
 
-            <Entry Placeholder="Nome completo" />
-            <Entry Placeholder="CPF" />
+            <Entry x:Name="NomeEntry" Placeholder="Nome Completo" />
+            <Entry x:Name="CpfEntry" Placeholder="CPF" />
             <Entry Placeholder="RG" />
             <Entry Placeholder="Telefone" />
-            <Entry Placeholder="E-mail" />
+            <Entry x:Name="EmailEntry" Placeholder="E-mail" />
             <Entry Placeholder="Endereço" />
             <Entry Placeholder="Renda mensal" />
-            <Entry Placeholder="Senha" IsPassword="True" />
-            <Entry Placeholder="Confirmar senha" IsPassword="True" />
+            <Entry x:Name="SenhaEntry" Placeholder="Senha" />
+            <Entry x:Name="ConfirmarSenhaEntry" Placeholder="Confirme sua senhao" />
 
-            <Button Text="Cadastrar" />
+            <Button Clicked="OnCadastrarClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

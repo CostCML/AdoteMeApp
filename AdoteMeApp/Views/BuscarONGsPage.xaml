@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.BuscarONGsPage"
+    Title="ONGs Próximas">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20">
+
+        <Label
+            Text="ONGs próximas"
+            FontSize="28"
+            FontAttributes="Bold" />
+
+        <Button
+            Text="Buscar localização"
+            Clicked="OnBuscarClicked" />
+
+        <CollectionView x:Name="OngsCollection">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Frame Margin="0,10">
+                        <VerticalStackLayout>
+
+                          <Label
+                            Text="{Binding NomeONG}"
+                            FontSize="22"
+                            FontAttributes="Bold" />
+
+                         <Label
+                            Text="{Binding NomeResponsavel}" />
+
+                         <Label
+                            Text="{Binding Endereco}" />
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -6,27 +7,32 @@
     Title="Dashboard">
 
     <ScrollView>
-        <VerticalStackLayout Padding="25" Spacing="20">
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25">
 
             <Label
-                Text="Painel Principal da ONG"
-                FontSize="26"
+                Text="Bem-vindo ao Adote-Me App"
+                FontSize="30"
                 FontAttributes="Bold" />
 
-            <Frame Padding="15">
-                <VerticalStackLayout>
-                    <Label Text="Animais Disponíveis: 24" />
-                    <Label Text="Voluntários Ativos: 12" />
-                    <Label Text="Adoções Concluídas: 38" />
-                    <Label Text="Parceiros Cadastrados: 7" />
-                </VerticalStackLayout>
-            </Frame>
+            <Button
+                Text="Buscar ONGs próximas"
+                Clicked="OnBuscarONGsClicked" />
 
-            <Button Text="Gerenciar ONG" />
-            <Button Text="Cadastrar Animal" />
-            <Button Text="Visualizar Relatórios" />
+            <Button
+                Text="Animais disponíveis"
+                Clicked="OnAnimaisClicked" />
+
+            <Button
+                Text="Meu perfil" />
+
+            <Button
+                Text="Minhas adoções" />
 
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

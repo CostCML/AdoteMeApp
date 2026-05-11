@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.CadastroONGPage"
+    Title="Cadastro ONG">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="20">
+
+            <Label
+                Text="Cadastro de ONG"
+                FontSize="30"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="NomeONGEntry"
+                Placeholder="Nome da ONG" />
+
+            <Entry
+                x:Name="ResponsavelEntry"
+                Placeholder="Nome do responsável" />
+
+            <Entry
+                x:Name="CNPJEntry"
+                Placeholder="CNPJ" />
+
+            <Entry
+                x:Name="TelefoneEntry"
+                Placeholder="Telefone" />
+
+            <Entry
+                x:Name="EnderecoEntry"
+                Placeholder="Endereço" />
+
+            <Button
+                Text="Cadastrar ONG"
+                Clicked="OnCadastrarClicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
