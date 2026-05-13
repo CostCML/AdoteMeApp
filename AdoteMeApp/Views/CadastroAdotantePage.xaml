@@ -1,26 +1,83 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="AdoteMeApp.Views.CadastroAdotantePage"
-    Title="Cadastro de Adotante">
+    Title="Cadastro Adotante">
 
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="15">
 
-            <Entry x:Name="NomeEntry" Placeholder="Nome Completo" />
-            <Entry x:Name="CpfEntry" Placeholder="CPF" />
-            <Entry Placeholder="RG" />
-            <Entry Placeholder="Telefone" />
-            <Entry x:Name="EmailEntry" Placeholder="E-mail" />
-            <Entry Placeholder="Endereço" />
-            <Entry Placeholder="Renda mensal" />
-            <Entry x:Name="SenhaEntry" Placeholder="Senha" />
-            <Entry x:Name="ConfirmarSenhaEntry" Placeholder="Confirme sua senhao" />
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="16">
 
-            <Button Clicked="OnCadastrarClicked" />
+            <Label
+                Text="Cadastro de Adotante"
+                FontSize="30"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="NomeEntry"
+                Placeholder="Nome completo" />
+
+            <Entry
+                x:Name="CPFEntry"
+                Placeholder="CPF"
+                Keyboard="Numeric" />
+
+            <DatePicker
+                x:Name="NascimentoPicker" />
+
+            <Entry
+                x:Name="TelefoneEntry"
+                Placeholder="Telefone"
+                Keyboard="Telephone" />
+
+            <Entry
+                x:Name="EnderecoEntry"
+                Placeholder="Endereço" />
+
+            <Entry
+                x:Name="CidadeEntry"
+                Placeholder="Cidade" />
+
+            <Entry
+                x:Name="EstadoEntry"
+                Placeholder="Estado" />
+
+            <Entry
+                x:Name="CEPEntry"
+                Placeholder="CEP"
+                Keyboard="Numeric" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="E-mail"
+                Keyboard="Email" />
+
+            <Entry
+                x:Name="SenhaEntry"
+                Placeholder="Senha"
+                IsPassword="True" />
+
+            <Entry
+                x:Name="ConfirmarSenhaEntry"
+                Placeholder="Confirmar senha"
+                IsPassword="True" />
+
+            <CheckBox
+                x:Name="TermosCheck" />
+
+            <Label
+                Text="Aceito os termos de uso e responsabilidade de adoção." />
+
+            <Button
+                Text="Cadastrar"
+                Clicked="OnCadastrarClicked" />
 
         </VerticalStackLayout>
+
     </ScrollView>
 
 </ContentPage>

@@ -1,18 +1,78 @@
+using AdoteMeApp.Services;
+
 namespace AdoteMeApp.Views;
 
 public partial class LoginPage : ContentPage
 {
+    private readonly AuthService _authService;
+
+    private readonly CryptographyService _crypto;
+
     public LoginPage()
     {
         InitializeComponent();
+
+        _authService =
+            MauiProgram.Current.Services
+            .GetRequiredService<AuthService>();
+
+        _crypto =
+            MauiProgram.Current.Services
+            .GetRequiredService<CryptographyService>();
     }
 
     private async void OnEntrarClicked(
         object sender,
         EventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(
+            EmailEntry.Text))
+        {
+            await DisplayAlert(
+                "Erro",
+                "Digite o e-mail.",
+                "OK");
+
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(
+            SenhaEntry.Text))
+        {
+            await DisplayAlert(
+                "Erro",
+                "Digite a senha.",
+                "OK");
+
+            return;
+        }
+
+        string senhaHash =
+            _crypto.GerarHash(
+                SenhaEntry.Text!);
+
+        var usuario =
+            await _authService.Login(
+                EmailEntry.Text!,
+                senhaHash);
+
+        if (usuario == null)
+        {
+            await DisplayAlert(
+                "Erro",
+                "E-mail ou senha inválidos.",
+                "OK");
+
+            return;
+        }
+
+        await DisplayAlert(
+            "Sucesso",
+            $"Bem-vindo {usuario.Nome}",
+            "OK");
+
         await Navigation.PushAsync(
-            new DashboardPage());
+            new BuscarONGsPage());
     }
 
     private async void OnCadastroClicked(
@@ -43,7 +103,9 @@ public partial class LoginPage : ContentPage
         object sender,
         EventArgs e)
     {
-        await Navigation.PushAsync(
-            new RecuperarSenhaPage());
+        await DisplayAlert(
+            "Recuperação de senha",
+            "Funcionalidade em desenvolvimento.",
+            "OK");
     }
 }

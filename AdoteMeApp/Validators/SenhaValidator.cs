@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
-namespace AdoteMeApp.Validators
+namespace AdoteMeApp.Validators;
+
+public static class SenhaValidator
 {
-    class SenhaValidator
+    public static bool Validar(string senha)
     {
+        return Regex.IsMatch(
+            senha,
+            @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$");
     }
 }

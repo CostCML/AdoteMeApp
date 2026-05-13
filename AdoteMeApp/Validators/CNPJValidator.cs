@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
-namespace AdoteMeApp.Validators
+namespace AdoteMeApp.Validators;
+
+public static class CNPJValidator
 {
-    class CNPJValidator
+    public static bool Validar(string cnpj)
     {
+        cnpj = Regex.Replace(cnpj, @"\D", "");
+
+        return cnpj.Length == 14;
     }
 }

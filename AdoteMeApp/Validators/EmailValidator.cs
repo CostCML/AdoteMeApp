@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 
-namespace AdoteMeApp.Validators
+namespace AdoteMeApp.Validators;
+
+public static class EmailValidator
 {
-    class EmailValidator
+    public static bool Validar(string email)
     {
+        return Regex.IsMatch(
+            email,
+            @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
     }
 }

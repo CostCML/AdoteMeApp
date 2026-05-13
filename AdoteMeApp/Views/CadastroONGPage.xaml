@@ -10,7 +10,7 @@
 
         <VerticalStackLayout
             Padding="30"
-            Spacing="20">
+            Spacing="18">
 
             <Label
                 Text="Cadastro de ONG"
@@ -27,18 +27,35 @@
 
             <Entry
                 x:Name="CNPJEntry"
-                Placeholder="CNPJ" />
+                Placeholder="CNPJ"
+                Keyboard="Numeric" />
 
             <Entry
                 x:Name="TelefoneEntry"
-                Placeholder="Telefone" />
+                Placeholder="Telefone"
+                Keyboard="Telephone" />
 
             <Entry
                 x:Name="EnderecoEntry"
                 Placeholder="Endereço" />
 
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="E-mail"
+                Keyboard="Email" />
+
+            <Entry
+                x:Name="SenhaEntry"
+                Placeholder="Senha"
+                IsPassword="True" />
+
+            <Label
+                Text="A senha deve conter letras maiúsculas, minúsculas, números e caracteres especiais."
+                FontSize="12"
+                TextColor="Gray" />
+
             <Button
-                Text="Cadastrar ONG"
+                Text="Cadastrar ONG" TextColor="White"
                 Clicked="OnCadastrarClicked" />
 
         </VerticalStackLayout>
