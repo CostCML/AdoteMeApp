@@ -22,4 +22,12 @@ public partial class DashboardPage : ContentPage
         await Navigation.PushAsync(
             new AnimaisPage());
     }
+
+    private async void OnCadastrarAnimalClicked(
+        object sender,
+        EventArgs e)
+        {
+            await Navigation.PushAsync(
+                new CadastroAnimalPage());
+        }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.SolicitarAdocaoPage"
+    Title="Solicitação de Adoção">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="15">
+
+            <Label
+                x:Name="AnimalLabel"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="NomeEntry"
+                Placeholder="Seu nome" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Seu e-mail" />
+
+            <Entry
+                x:Name="TelefoneEntry"
+                Placeholder="Telefone" />
+
+            <Editor
+                x:Name="MensagemEditor"
+                Placeholder="Fale sobre você e por que deseja adotar"
+                HeightRequest="160" />
+
+            <Button
+                Text="Enviar solicitação"
+                Clicked="OnEnviarClicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

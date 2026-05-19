@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.CadastroAnimalPage"
+    Title="Cadastro Animal">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="16">
+
+            <Label
+                Text="Cadastrar Animal"
+                FontSize="30"
+                FontAttributes="Bold" />
+
+            <Entry
+                x:Name="NomeEntry"
+                Placeholder="Nome do animal" />
+
+            <Picker
+                x:Name="EspeciePicker"
+                Title="Espécie">
+
+                <Picker.Items>
+                    <x:String>Cachorro</x:String>
+                    <x:String>Gato</x:String>
+                    <x:String>Outro</x:String>
+                </Picker.Items>
+
+            </Picker>
+
+            <Entry
+                x:Name="RacaEntry"
+                Placeholder="Raça" />
+
+            <Entry
+                x:Name="IdadeEntry"
+                Placeholder="Idade" />
+
+            <Picker
+                x:Name="SexoPicker"
+                Title="Sexo">
+
+                <Picker.Items>
+                    <x:String>Macho</x:String>
+                    <x:String>Fêmea</x:String>
+                </Picker.Items>
+
+            </Picker>
+
+            <Picker
+                x:Name="PortePicker"
+                Title="Porte">
+
+                <Picker.Items>
+                    <x:String>Pequeno</x:String>
+                    <x:String>Médio</x:String>
+                    <x:String>Grande</x:String>
+                </Picker.Items>
+
+            </Picker>
+
+            <HorizontalStackLayout>
+
+                <CheckBox
+                    x:Name="VacinadoCheck" />
+
+                <Label
+                    Text="Vacinado"
+                    VerticalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+
+                <CheckBox
+                    x:Name="CastradoCheck" />
+
+                <Label
+                    Text="Castrado"
+                    VerticalOptions="Center" />
+
+            </HorizontalStackLayout>
+
+            <Editor
+                x:Name="DescricaoEditor"
+                Placeholder="Descrição do animal"
+                HeightRequest="120" />
+
+            <Button
+                Text="Selecionar Foto"
+                Clicked="OnSelecionarFotoClicked" />
+
+            <Image
+                x:Name="FotoAnimal"
+                HeightRequest="220"
+                Aspect="AspectFill" />
+
+            <Button
+                Text="Cadastrar Animal"
+                Clicked="OnCadastrarAnimalClicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

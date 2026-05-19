@@ -18,6 +18,12 @@ public class DatabaseService
             new SQLiteAsyncConnection(dbPath);
 
         _database.CreateTableAsync<Usuario>().Wait();
+
+        _database.CreateTableAsync<Animal>().Wait();
+
+        _database.CreateTableAsync<ONG>().Wait();
+
+        _database.CreateTableAsync<SolicitacaoAdocao>().Wait();
     }
 
     public async Task<int> SalvarUsuario(
@@ -46,4 +52,48 @@ public class DatabaseService
                 u.Email == email)
             .FirstOrDefaultAsync();
     }
+
+    public async Task<int> SalvarAnimal(
+    Animal animal)
+    {
+        return await _database.InsertAsync(
+            animal);
+    }
+
+    public async Task<List<Animal>> ListarAnimais()
+    {
+        return await _database.Table<Animal>()
+            .ToListAsync();
+    }
+
+
+    public async Task<int> SalvarONG(
+    ONG ong)
+    {
+        return await _database.InsertAsync(
+            ong);
+    }
+
+    public async Task<List<ONG>> ListarONGs()
+    {
+        return await _database.Table<ONG>()
+            .ToListAsync();
+    }
+
+    public async Task<int> SalvarSolicitacao(
+    SolicitacaoAdocao solicitacao)
+    {
+        return await _database.InsertAsync(
+            solicitacao);
+    }
+
+    public async Task<List<SolicitacaoAdocao>>
+        ListarSolicitacoes()
+    {
+        return await _database
+            .Table<SolicitacaoAdocao>()
+            .ToListAsync();
+    }
+
+
 }

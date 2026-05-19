@@ -5,83 +5,92 @@ namespace AdoteMeApp.Views;
 
 public partial class BuscarONGsPage : ContentPage
 {
-    private readonly GeolocationService _geoService;
+    private readonly DatabaseService _database;
+
+    private readonly GeolocationService _geo;
 
     public BuscarONGsPage()
     {
         InitializeComponent();
 
-        _geoService = new GeolocationService();
+        _database =
+            MauiProgram.Current.Services
+            .GetRequiredService<DatabaseService>();
+
+        _geo =
+            MauiProgram.Current.Services
+            .GetRequiredService<GeolocationService>();
     }
 
     private async void OnBuscarClicked(
         object sender,
         EventArgs e)
     {
-        var localizacao =
-            await _geoService.ObterLocalizacao();
+        Location? usuario =
+            await _geo.ObterLocalizacao();
 
-        if (localizacao == null)
+        if (usuario == null)
         {
             await DisplayAlert(
                 "Erro",
-                "Não foi possível obter a localização.",
+                "Não foi possível obter localização.",
                 "OK");
 
             return;
         }
 
-        double latitudeUsuario = localizacao.Latitude;
-        double longitudeUsuario = localizacao.Longitude;
+        List<ONG> lista =
+            await _database.ListarONGs();
 
-        List<ONG> lista = ObterONGs();
-
-        var ongsProximas =
-            lista.Where(ong =>
+        if (lista.Count == 0)
+        {
+            lista = new()
             {
-                double distancia =
-                    Location.CalculateDistance(
-                        latitudeUsuario,
-                        longitudeUsuario,
-                        ong.Latitude,
-                        ong.Longitude,
-                        DistanceUnits.Kilometers);
+                new ONG
+                {
+                    NomeONG = "Patinhas Felizes",
+                    Endereco = "São José do Rio Preto",
+                    Telefone = "(17) 99999-9999",
+                    Latitude = -20.8113,
+                    Longitude = -49.3758
+                },
 
-                return distancia <= 50;
-            })
+                new ONG
+                {
+                    NomeONG = "Amor Animal",
+                    Endereco = "Mirassol",
+                    Telefone = "(17) 98888-8888",
+                    Latitude = -20.8178,
+                    Longitude = -49.5206
+                }
+            };
+
+            foreach (var ong in lista)
+            {
+                await _database.SalvarONG(
+                    ong);
+            }
+        }
+
+        var proximas =
+            lista
+            .OrderBy(o =>
+                _geo.CalcularDistancia(
+                    usuario.Latitude,
+                    usuario.Longitude,
+                    o.Latitude,
+                    o.Longitude))
             .ToList();
 
-        OngsCollection.ItemsSource = ongsProximas;
-
-        await DisplayAlert(
-            "GPS",
-            $"{ongsProximas.Count} ONGs encontradas próximas.",
-            "OK");
+        OngsCollection.ItemsSource =
+            proximas;
     }
 
-    private List<ONG> ObterONGs()
-    {
-        return new List<ONG>
+    private async void OnMapaClicked(
+        object sender,
+        EventArgs e)
         {
-            new ONG
-            {
-                NomeONG = "Patinhas Felizes",
-                NomeResponsavel = "Maria Silva",
-                Endereco = "São José do Rio Preto",
-                Telefone = "(17) 99999-9999",
-                Latitude = -20.8113,
-                Longitude = -49.3758
-            },
-
-            new ONG
-            {
-                NomeONG = "Amor Animal",
-                NomeResponsavel = "João Souza",
-                Endereco = "Mirassol",
-                Telefone = "(17) 98888-8888",
-                Latitude = -20.8187,
-                Longitude = -49.5206
-            }
-        };
-    }
+            await Navigation.PushAsync(
+                new MapaONGsPage());
+        }
 }

@@ -31,6 +31,10 @@
             <Button
                 Text="Minhas adoções" />
 
+            <Button
+                Text="Cadastrar Animal"
+                Clicked="OnCadastrarAnimalClicked" />
+
         </VerticalStackLayout>
 
     </ScrollView>
