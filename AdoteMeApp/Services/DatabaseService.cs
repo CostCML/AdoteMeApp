@@ -95,5 +95,12 @@ public class DatabaseService
             .ToListAsync();
     }
 
+    public async Task AtualizarSolicitacao(
+    SolicitacaoAdocao solicitacao)
+    {
+        await _database.UpdateAsync(
+            solicitacao);
+    }
+
 
 }

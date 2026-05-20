@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Views.PainelONGPage"
+    Title="Painel ONG">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="15">
+
+        <Label
+            Text="Solicitações de adoção"
+            FontSize="30"
+            FontAttributes="Bold" />
+
+        <CollectionView
+            x:Name="SolicitacoesCollection">
+
+            <CollectionView.ItemTemplate>
+
+                <DataTemplate>
+
+                    <Frame
+                        Padding="15"
+                        Margin="0,5">
+
+                        <VerticalStackLayout
+                            Spacing="8">
+
+                            <Label
+                                Text="{Binding NomeAnimal}"
+                                FontSize="24"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="{Binding NomeAdotante}" />
+
+                            <Label
+                                Text="{Binding EmailAdotante}" />
+
+                            <Label
+                                Text="{Binding Telefone}" />
+
+                            <Label
+                                Text="{Binding Mensagem}" />
+
+                            <Label
+                                Text="{Binding Status}"
+                                FontAttributes="Bold" />
+
+                            <HorizontalStackLayout
+                                Spacing="10">
+
+                                <Button
+                                    Text="Aprovar"
+                                    Clicked="OnAprovarClicked"
+                                    CommandParameter="{Binding .}" />
+
+                                <Button
+                                    Text="Recusar"
+                                    Clicked="OnRecusarClicked"
+                                    CommandParameter="{Binding .}" />
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </VerticalStackLayout>
+
+</ContentPage>

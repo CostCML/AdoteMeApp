@@ -4,84 +4,101 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="AdoteMeApp.Views.AnimaisDisponiveisPage"
-    Title="Animais Disponíveis">
+    BackgroundColor="#F5F5F5"
+    Title="Animais">
 
-    <ScrollView>
+    <CollectionView
+        x:Name="AnimaisCollection"
+        Margin="15">
 
-        <VerticalStackLayout
-            Padding="20"
-            Spacing="15">
+        <CollectionView.ItemTemplate>
 
-            <Label
-                Text="Animais para adoção"
-                FontSize="28"
-                FontAttributes="Bold" />
+            <DataTemplate>
 
-            <CollectionView
-                x:Name="AnimaisCollection">
+                <Frame
+                    Margin="0,0,0,20"
+                    Padding="0"
+                    CornerRadius="20"
+                    HasShadow="True"
+                    BackgroundColor="White">
 
-                <CollectionView.ItemTemplate>
+                    <VerticalStackLayout>
 
-                    <DataTemplate>
+                        <!-- FOTO -->
 
-                        <Frame
+                        <Image
+                            Source="{Binding Foto}"
+                            HeightRequest="220"
+                            Aspect="AspectFill" />
+
+                        <VerticalStackLayout
                             Padding="15"
-                            Margin="0,5"
-                            BorderColor="LightGray">
+                            Spacing="10">
 
-                            <VerticalStackLayout
-                                Spacing="8">
+                            <!-- NOME -->
 
-                                <Image
-                                    Source="{Binding FotoPath}"
-                                    HeightRequest="220"
-                                    Aspect="AspectFill" />
+                            <Label
+                                Text="{Binding Nome}"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                TextColor="#222" />
 
-                                <Label
-                                    Text="{Binding Nome}"
-                                    FontSize="22"
-                                    FontAttributes="Bold" />
+                            <!-- INFO -->
 
-                                <Label
-                                    Text="{Binding Especie}" />
+                            <Label
+                                Text="{Binding Sexo}"
+                                FontSize="15"
+                                TextColor="#666" />
 
-                                <Label
-                                    Text="{Binding Raca}" />
+                            <Label
+                                Text="{Binding Idade}"
+                                FontSize="15"
+                                TextColor="#666" />
 
-                                <Label
-                                    Text="{Binding Idade}" />
+                            <Label
+                                Text="{Binding Porte}"
+                                FontSize="15"
+                                TextColor="#666" />
 
-                                <Label
-                                    Text="{Binding Sexo}" />
+                            <!-- ONG -->
 
-                                <Label
-                                    Text="{Binding Porte}" />
+                            <Label
+                                Text="{Binding NomeONG}"
+                                FontSize="14"
+                                TextColor="#5B2BE0" />
 
-                                <Label
-                                    Text="{Binding Descricao}" />
+                            <!-- BOTÕES -->
 
-                                <Label
-                                    Text="{Binding StatusAdocao}"
-                                    TextColor="Green"
-                                    FontAttributes="Bold" />
+                            <Grid
+                                ColumnDefinitions="*,*"
+                                Margin="0,10,0,0">
 
                                 <Button
-                                    Text="Solicitar adoção"
-                                    Clicked="OnSolicitarClicked"
-                                    CommandParameter="{Binding .}" />
+                                    Grid.Column="0"
+                                    Text="❤️ Favoritar"
+                                    BackgroundColor="#EFEAFE"
+                                    TextColor="#5B2BE0"
+                                    CornerRadius="15" />
 
-                            </VerticalStackLayout>
+                                <Button
+                                    Grid.Column="1"
+                                    Text="Quero Adotar"
+                                    BackgroundColor="#5B2BE0"
+                                    TextColor="White"
+                                    CornerRadius="15" />
 
-                        </Frame>
+                            </Grid>
 
-                    </DataTemplate>
+                        </VerticalStackLayout>
 
-                </CollectionView.ItemTemplate>
+                    </VerticalStackLayout>
 
-            </CollectionView>
+                </Frame>
 
-        </VerticalStackLayout>
+            </DataTemplate>
 
-    </ScrollView>
+        </CollectionView.ItemTemplate>
+
+    </CollectionView>
 
 </ContentPage>

@@ -1,80 +1,47 @@
 using AdoteMeApp.Models;
-using AdoteMeApp.Services;
 
 namespace AdoteMeApp.Views;
 
 public partial class AnimaisDisponiveisPage : ContentPage
 {
-    private readonly DatabaseService _database;
-
     public AnimaisDisponiveisPage()
     {
         InitializeComponent();
 
-        _database =
-            MauiProgram.Current.Services
-            .GetRequiredService<DatabaseService>();
-    }
-
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-
-        List<Animal> lista =
-            await _database.ListarAnimais();
-
-        if (lista.Count == 0)
+        List<Animal> lista = new()
         {
-            lista = new List<Animal>()
+            new Animal
             {
-                new Animal
-                {
-                    Nome = "Thor",
-                    Especie = "Cachorro",
-                    Raca = "Vira-lata",
-                    Idade = "2 anos",
-                    Sexo = "Macho",
-                    Porte = "Médio",
-                    Descricao = "Muito dócil e brincalhão.",
-                    StatusAdocao = "Disponível"
-                },
+                Nome = "Thor",
+                Sexo = "Macho",
+                Idade = "2 anos",
+                Porte = "Médio",
+                NomeONG = "ONG Patinhas Felizes",
+                Foto = "dog1.jpg"
+            },
 
-                new Animal
-                {
-                    Nome = "Mia",
-                    Especie = "Gato",
-                    Raca = "Siamês",
-                    Idade = "1 ano",
-                    Sexo = "Fêmea",
-                    Porte = "Pequeno",
-                    Descricao = "Calma e carinhosa.",
-                    StatusAdocao = "Disponível"
-                }
-            };
-
-            foreach (var animal in lista)
+            new Animal
             {
-                await _database.SalvarAnimal(
-                    animal);
+                Nome = "Mel",
+                Sexo = "Fêmea",
+                Idade = "1 ano",
+                Porte = "Pequeno",
+                NomeONG = "ONG Amor Animal",
+                Foto = "dog2.jpg"
+            },
+
+            new Animal
+            {
+                Nome = "Mingau",
+                Sexo = "Macho",
+                Idade = "3 anos",
+                Porte = "Pequeno",
+                NomeONG = "ONG Patinhas Felizes",
+                Foto = "cat1.jpg"
             }
-        }
+        };
 
         AnimaisCollection.ItemsSource =
-            await _database.ListarAnimais();
-    }
-
-    private async void OnSolicitarClicked(
-        object sender,
-        EventArgs e)
-        {
-            Button botao =
-                (Button)sender;
-
-            Animal animal =
-                (Animal)botao.CommandParameter;
-
-            await Navigation.PushAsync(
-                new SolicitarAdocaoPage(
-                    animal));
+            lista;
     }
 }

@@ -6,8 +6,8 @@ public partial class App : Application
     {
         InitializeComponent();
 
-        MainPage = new NavigationPage(
-            new Views.LoginPage()
-        );
+        MainPage =
+            new NavigationPage(
+                new Views.LoginPage());
     }
 }

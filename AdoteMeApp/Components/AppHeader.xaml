@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AdoteMeApp.Components.AppHeader">
+
+    <VerticalStackLayout
+        Padding="0,20,0,10"
+        Spacing="10">
+
+        <Image
+            Source="logo.png"
+            HeightRequest="120"
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Adote-Me App"
+            FontSize="28"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            TextColor="#222222" />
+
+    </VerticalStackLayout>
+
+</ContentView>

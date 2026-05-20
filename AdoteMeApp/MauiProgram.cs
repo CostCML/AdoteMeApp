@@ -5,11 +5,16 @@ namespace AdoteMeApp;
 
 public static class MauiProgram
 {
-    public static MauiApp Current { get; private set; } = null!;
+    public static MauiApp Current
+    {
+        get;
+        private set;
+    }
 
     public static MauiApp CreateMauiApp()
     {
-        var builder = MauiApp.CreateBuilder();
+        var builder =
+            MauiApp.CreateBuilder();
 
         builder
             .UseMauiApp<App>()
@@ -24,19 +29,22 @@ public static class MauiProgram
                     "OpenSansSemibold");
             });
 
-        builder.Services.AddSingleton<DatabaseService>();
+        // SERVICES
 
-        builder.Services.AddSingleton<AuthService>();
+        builder.Services.AddSingleton<
+            DatabaseService>();
 
-        builder.Services.AddSingleton<ValidationService>();
+        builder.Services.AddSingleton<
+            AuthService>();
 
-        builder.Services.AddSingleton<GeolocationService>();
+        builder.Services.AddSingleton<
+            CryptographyService>();
 
-        builder.Services.AddSingleton<CryptographyService>();
+        builder.Services.AddSingleton<
+            ValidationService>();
 
-#if DEBUG
-        builder.Logging.AddDebug();
-#endif
+        builder.Services.AddSingleton<
+            GeolocationService>();
 
         Current = builder.Build();
 

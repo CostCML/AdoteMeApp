@@ -1,3 +1,4 @@
+using AdoteMeApp;
 using AdoteMeApp.Services;
 
 namespace AdoteMeApp.Views;
@@ -71,8 +72,16 @@ public partial class LoginPage : ContentPage
             $"Bem-vindo {usuario.Nome}",
             "OK");
 
-        await Navigation.PushAsync(
-            new BuscarONGsPage());
+        if (usuario.TipoUsuario == "ONG")
+        {
+            Application.Current.MainPage =
+            new AdoteMeApp.AppShell();
+        }
+        else
+        {
+            await Navigation.PushAsync(
+                new BuscarONGsPage());
+        }
     }
 
     private async void OnCadastroClicked(

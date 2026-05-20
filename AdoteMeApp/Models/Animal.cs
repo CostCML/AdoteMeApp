@@ -1,31 +1,108 @@
-﻿using SQLite;
-
-namespace AdoteMeApp.Models;
+﻿namespace AdoteMeApp.Models;
 
 public class Animal
 {
-    [PrimaryKey, AutoIncrement]
-    public int Id { get; set; }
+    public int Id
+    {
+        get;
+        set;
+    }
 
-    public string Nome { get; set; } = string.Empty;
+    // BÁSICO
 
-    public string Especie { get; set; } = string.Empty;
+    public string Nome
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public string Raca { get; set; } = string.Empty;
+    public string Especie
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public string Idade { get; set; } = string.Empty;
+    public string Raca
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public string Sexo { get; set; } = string.Empty;
+    public string Sexo
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public string Porte { get; set; } = string.Empty;
+    public string Idade
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public bool Vacinado { get; set; }
+    public string Porte
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public bool Castrado { get; set; }
+    // DESCRIÇÃO
 
-    public string Descricao { get; set; } = string.Empty;
+    public string Descricao
+    {
+        get;
+        set;
+    } = string.Empty;
 
-    public string StatusAdocao { get; set; } = string.Empty;
+    // SAÚDE
 
-    public string FotoPath { get; set; } = string.Empty;
+    public bool Vacinado
+    {
+        get;
+        set;
+    }
+
+    public bool Castrado
+    {
+        get;
+        set;
+    }
+
+    // ADOÇÃO
+
+    public string StatusAdocao
+    {
+        get;
+        set;
+    } = "Disponível";
+
+    // ONG
+
+    public string NomeONG
+    {
+        get;
+        set;
+    } = string.Empty;
+
+    // FOTO
+
+    public string Foto
+    {
+        get;
+        set;
+    } = string.Empty;
+
+    public string FotoPath
+    {
+        get;
+        set;
+    } = string.Empty;
+
+    // FAVORITOS
+
+    public bool Favorito
+    {
+        get;
+        set;
+    }
 }
