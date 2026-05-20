@@ -102,5 +102,12 @@ public class DatabaseService
             solicitacao);
     }
 
+    public async Task<int> AtualizarUsuario(
+    Usuario usuario)
+    {
+        return await _database.UpdateAsync(
+            usuario);
+    }
+
 
 }

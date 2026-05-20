@@ -112,9 +112,7 @@ public partial class LoginPage : ContentPage
         object sender,
         EventArgs e)
     {
-        await DisplayAlert(
-            "Recuperação de senha",
-            "Funcionalidade em desenvolvimento.",
-            "OK");
+        await Navigation.PushAsync(
+        new RecuperarSenhaPage());
     }
 }

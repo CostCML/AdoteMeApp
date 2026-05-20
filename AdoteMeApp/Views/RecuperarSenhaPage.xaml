@@ -3,26 +3,61 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:AdoteMeApp.Components"
     x:Class="AdoteMeApp.Views.RecuperarSenhaPage"
-    Title="Recuperar Senha">
+    Title="Recuperar Senha"
+    BackgroundColor="#F7F7F7">
 
-    <VerticalStackLayout
-        Padding="30"
-        Spacing="20">
+    <ScrollView>
 
-        <Label
-            Text="Recuperar Senha"
-            FontSize="28"
-            FontAttributes="Bold" />
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="18">
 
-        <Entry
-            x:Name="EmailEntry"
-            Placeholder="Digite seu e-mail" />
+            <components:AppHeader />
 
-        <Button
-            Text="Enviar recuperação"
-            Clicked="OnEnviarClicked" />
+            <Label
+                Text="Recuperação de Senha"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                TextColor="#222" />
 
-    </VerticalStackLayout>
+            <Label
+                Text="Digite seu e-mail e crie uma nova senha."
+                FontSize="15"
+                HorizontalOptions="Center"
+                TextColor="Gray" />
+
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Digite seu e-mail"
+                Keyboard="Email"
+                BackgroundColor="White" />
+
+            <Entry
+                x:Name="NovaSenhaEntry"
+                Placeholder="Nova senha"
+                IsPassword="True"
+                BackgroundColor="White" />
+
+            <Entry
+                x:Name="ConfirmarSenhaEntry"
+                Placeholder="Confirmar nova senha"
+                IsPassword="True"
+                BackgroundColor="White" />
+
+            <Button
+                Text="Atualizar Senha"
+                Clicked="OnAtualizarSenhaClicked"
+                HeightRequest="55"
+                CornerRadius="14"
+                BackgroundColor="#5E35B1"
+                TextColor="White"
+                FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
 
 </ContentPage>

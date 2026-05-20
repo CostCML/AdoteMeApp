@@ -3,6 +3,7 @@
 <ContentPage
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:components="clr-namespace:AdoteMeApp.Components"
     x:Class="AdoteMeApp.Views.CadastroONGPage"
     Title="Cadastro ONG">
 
@@ -11,6 +12,7 @@
         <VerticalStackLayout
             Padding="30"
             Spacing="18">
+            <components:AppHeader />
 
             <Label
                 Text="Cadastro de ONG"

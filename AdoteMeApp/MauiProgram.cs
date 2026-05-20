@@ -1,5 +1,6 @@
 ﻿using AdoteMeApp.Services;
 using Microsoft.Extensions.Logging;
+using CommunityToolkit.Maui;
 
 namespace AdoteMeApp;
 
@@ -42,6 +43,10 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<
             ValidationService>();
+
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit();
 
         builder.Services.AddSingleton<
             GeolocationService>();
